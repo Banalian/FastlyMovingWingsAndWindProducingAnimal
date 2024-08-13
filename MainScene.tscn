@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0vu2y880u5ji"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tao1d"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Bird" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
+position = Vector2(81, -89)
+shape = SubResource("CircleShape2D_tao1d")
