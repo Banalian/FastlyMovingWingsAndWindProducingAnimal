@@ -10,11 +10,13 @@ size = Vector2(32, 146)
 script = ExtResource("1_gwg7m")
 
 [node name="pipe_down" parent="." instance=ExtResource("1_4ungu")]
-position = Vector2(0, 275)
+position = Vector2(0, 375)
+scale = Vector2(1, 1.5)
 
 [node name="pipe_up" parent="." instance=ExtResource("1_4ungu")]
-position = Vector2(0, -275)
+position = Vector2(0, -375)
 rotation = -3.14159
+scale = Vector2(1, 1.5)
 
 [node name="score" type="Area2D" parent="."]
 
