@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdewnvha1rl3u"]
+
+[ext_resource type="PackedScene" uid="uid://b1886jytr0cmw" path="res://pipe.tscn" id="1_4ungu"]
+[ext_resource type="Script" path="res://complete_pipe.gd" id="1_gwg7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rbsd"]
+size = Vector2(32, 146)
+
+[node name="Node" type="Node2D"]
+script = ExtResource("1_gwg7m")
+
+[node name="pipe_down" parent="." instance=ExtResource("1_4ungu")]
+position = Vector2(0, 275)
+
+[node name="pipe_up" parent="." instance=ExtResource("1_4ungu")]
+position = Vector2(0, -275)
+rotation = -3.14159
+
+[node name="score" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="score"]
+shape = SubResource("RectangleShape2D_4rbsd")

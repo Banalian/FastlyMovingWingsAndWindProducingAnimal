@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtjj3kgvau4nv"]
+
+[ext_resource type="Script" path="res://pipe_spawner.gd" id="1_k8eih"]
+[ext_resource type="PackedScene" uid="uid://bdewnvha1rl3u" path="res://complete_pipe.tscn" id="2_sxudo"]
+
+[node name="Node" type="Node" node_paths=PackedStringArray("spawnpoint")]
+script = ExtResource("1_k8eih")
+pipe_blueprint = ExtResource("2_sxudo")
+spawnpoint = NodePath("SpawnPoint")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(1250, 300)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
