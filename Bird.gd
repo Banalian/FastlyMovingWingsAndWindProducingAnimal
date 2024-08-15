@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal score_touched
+
 var gravity_force = Vector2.DOWN * 100
 var jump_force = Vector2.UP * 200
 # Called when the node enters the scene tree for the first time.
@@ -22,3 +24,16 @@ func _unhandled_input(event):
 
 func _on_button_pressed():
 	jump()
+
+func fail_game():
+	# for now, just delete the bird
+	queue_free()
+	pass
+
+func _on_body_entered(body):
+	print("touched something")
+	if body.is_in_group("pipe"):
+		fail_game()
+	if body.is_in_group("score_ring"):
+		score_touched.emit()
+	pass # Replace with function body.

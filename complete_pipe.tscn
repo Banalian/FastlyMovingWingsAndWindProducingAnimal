@@ -8,17 +8,18 @@ size = Vector2(32, 146)
 
 [node name="Node" type="Node2D"]
 script = ExtResource("1_gwg7m")
+move_speed = 100
 
-[node name="pipe_down" parent="." instance=ExtResource("1_4ungu")]
+[node name="pipe_down" parent="." groups=["pipe"] instance=ExtResource("1_4ungu")]
 position = Vector2(0, 375)
 scale = Vector2(1, 1.5)
 
-[node name="pipe_up" parent="." instance=ExtResource("1_4ungu")]
+[node name="pipe_up" parent="." groups=["pipe"] instance=ExtResource("1_4ungu")]
 position = Vector2(0, -375)
 rotation = -3.14159
 scale = Vector2(1, 1.5)
 
-[node name="score" type="Area2D" parent="."]
+[node name="score" type="Area2D" parent="." groups=["score_ring"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="score"]
 shape = SubResource("RectangleShape2D_4rbsd")

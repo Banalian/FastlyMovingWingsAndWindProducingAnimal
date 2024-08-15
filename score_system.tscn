@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfurohretm0gw"]
+
+[ext_resource type="Script" path="res://ScoreSystem.gd" id="1_3kkjp"]
+
+[node name="ScoreSystem" type="Node"]
+script = ExtResource("1_3kkjp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 12.0
+offset_right = 1038.0
+offset_bottom = 35.0
+text = "Score:"

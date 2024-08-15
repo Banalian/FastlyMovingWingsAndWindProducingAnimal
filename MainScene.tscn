@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0vu2y880u5ji"]
+[gd_scene load_steps=4 format=3 uid="uid://d0vu2y880u5ji"]
 
 [ext_resource type="PackedScene" uid="uid://5hqpy8vd2rag" path="res://bird.tscn" id="1_6s5eb"]
 [ext_resource type="PackedScene" uid="uid://dtjj3kgvau4nv" path="res://pipe_spawner.tscn" id="2_1f2md"]
+[ext_resource type="PackedScene" uid="uid://dfurohretm0gw" path="res://score_system.tscn" id="3_5tkdm"]
 
 [node name="Root" type="Node2D"]
 
@@ -18,4 +19,7 @@ gravity_scale = 0.5
 
 [node name="Node" parent="." instance=ExtResource("2_1f2md")]
 
+[node name="ScoreSystem" parent="." instance=ExtResource("3_5tkdm")]
+
 [connection signal="pressed" from="Button" to="Bird" method="_on_button_pressed"]
+[connection signal="score_touched" from="Bird" to="ScoreSystem" method="add_score"]
