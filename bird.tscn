@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c7xpmvxm5b4l3" path="res://Sprites/bird.png" id="2_ujqcd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onpqr"]
+radius = 20.0
 
-[node name="Bird" type="RigidBody2D"]
+[node name="Bird" type="RigidBody2D" groups=["bird"]]
 script = ExtResource("1_bvs3y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -13,7 +14,7 @@ scale = Vector2(0.21, 0.21)
 texture = ExtResource("2_ujqcd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_onpqr")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="pipe_hit" from="." to="." method="_on_pipe_hit"]
+[connection signal="score_touched" from="." to="." method="_on_score_touched"]

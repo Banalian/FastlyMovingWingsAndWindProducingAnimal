@@ -23,3 +23,7 @@ scale = Vector2(1, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="score"]
 shape = SubResource("RectangleShape2D_4rbsd")
+
+[connection signal="body_entered" from="pipe_down" to="." method="_on_pipe_down_body_entered"]
+[connection signal="body_entered" from="pipe_up" to="." method="_on_pipe_up_body_entered"]
+[connection signal="body_entered" from="score" to="." method="_on_score_body_entered"]
